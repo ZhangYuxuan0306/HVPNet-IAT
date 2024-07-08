@@ -1,5 +1,43 @@
-## HVPNet-IAT
-# Abstract
-Multimodal Named Entity Recognition (MNER) is a key task which aims to extract named entities from a text under the support of related images. However, there are still the following two challenges in the research of MNER. First, the existing social media images are greatly influenced by the complex environment, which affects the perceptual performance of the model. Second, the existing methods are often restricted by the modal gap between images and texts, obstructing the effective integration of multimodal information. To solve these two challenges, we put forward a Light Control-Based Multimodal Named Entity Recognition (LCMNER) Model, which not only reduces the influence of image quality on MNER, but also narrows the modal gap between image and text. Specifically, we first use the image enhancement module to solve the poor image quality problem in a complex environment and then adopt the image description generation technology to extract the semantic features of images and enter them into the bert model together with the visual features and semantic features of text information, thereby reducing the modal gap. We conducted a number of experiments on two public datasets Twitter and the experimental results showed that LCMNER model had a significant increase of more than 3% in terms of precision, recall and F1 value and was also superior to other multimodal named entity recognition algorithms.   
-# Keywords
-Light control, image enhancement, Multimodal Named Entity Recognition, image captioning generation
+The expected structure of files is:
+```
+#CIModel
+ |-- ckpt
+ |    |-- REModel
+ |    |-- Twitter2015Model
+ |    |    |--unimodal
+ |    |    |--multimodal
+ |    |-- Twitter2017Model
+ |    |    |--unimodal
+ |    |    |--multimodal
+ |-- data
+ |    |-- NER_data
+ |    |    |--twitter15_caption.csv
+ |    |    |--twitter17_caption.csv
+ |    |    |-- twitter2015 
+ |    |    |    |--unimodal
+ |    |    |    |   |-- train.txt
+ |    |    |    |   |-- test.txt
+ |    |    |    |   |-- valid.txt
+ |    |    |    |-- train.txt
+ |    |    |    |-- valid.txt
+ |    |    |    |-- test.txt
+ |    |    |    |-- twitter2015_train_dict.pth 
+ |    |    |    |-- ...
+ |    |    |-- twitter2015_images
+ |    |    |-- twitter2015_aux_images
+ |    |    |-- twitter2017
+ |    |    |    |--unimodal
+ |    |    |    |   |-- train.txt
+ |    |    |    |   |-- test.txt
+ |    |    |    |   |-- valid.txt
+ |    |    |-- twitter2017_images
+ |    |    |-- twitter2017_aux_images
+ |    |-- RE_data
+ |    |    |-- caption.csv
+ |    |    |-- img_org          
+ |    |    |-- img_vg          
+ |    |    |-- txt            
+ |    |    |-- ours_rel2id.json
+ |-- run_multimodal.py 
+ |-- run_unimodal.py 
+```
